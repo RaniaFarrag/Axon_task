@@ -14,4 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/** Route to list customers phone numbers in DB */
 Route::get('/list-phone', [CustomerController::class, 'listPhoneNumbers']);

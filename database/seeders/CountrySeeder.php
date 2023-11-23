@@ -15,11 +15,11 @@ class CountrySeeder extends Seeder
     public function insertCountries()
     {
         $countries = [
-            ['country_name'=>'Cameroon', 'state' => true, 'country_code' => '+237'],
-            ['country_name'=>'Ethiopia', 'state' => true, 'country_code' => '+251'],
-            ['country_name'=>'Morocco', 'state' => true, 'country_code' => '+212'],
-            ['country_name'=>'Mozambique', 'state' => true, 'country_code' => '+258'],
-            ['country_name'=>'Uganda', 'state' => true, 'country_code' => '+256'],
+            ['country_name'=>'Cameroon', 'country_code' => '+237'],
+            ['country_name'=>'Ethiopia', 'country_code' => '+251'],
+            ['country_name'=>'Morocco', 'country_code' => '+212'],
+            ['country_name'=>'Mozambique', 'country_code' => '+258'],
+            ['country_name'=>'Uganda', 'country_code' => '+256'],
         ];
 
         Country::query()->insert($countries);

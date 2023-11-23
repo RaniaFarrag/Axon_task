@@ -9,12 +9,16 @@
 
 ## About This Task
  
-List and categorize the phone numbers  
+List and categorize the phone numbers in DB:
 
-## Steps to clone this repo in your machine
+I assume that a valid number is less than 10 digits without country 
+code
+
+
+## Steps to set up this repo in your machine
 
 - clone this repo
-- composer update  
+- composer install  
 - create new DB called axon_task
 - php artisan migrate
 - php artisan db:seed

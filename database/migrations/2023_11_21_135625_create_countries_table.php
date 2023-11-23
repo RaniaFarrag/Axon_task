@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('countries', function (Blueprint $table) {
             $table->id();
             $table->string('country_name');
-            $table->boolean('state')->default(true);
             $table->string('country_code');
             $table->timestamps();
         });
@@ -23,7 +22,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('countries');
     }

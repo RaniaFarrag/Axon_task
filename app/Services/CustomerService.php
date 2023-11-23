@@ -15,21 +15,23 @@ class CustomerService
         $this->request = $request;
     }
 
-    public function filterCustomersPhoneNumbers($request)
+    /** Filter phone numbers */
+    public function filterCustomersPhoneNumbers()
     {
-        $customers = Customer::query();
-        if($request->has('country_id')){
-            $customers = $customers->where('country_id', $request->country_id);
+        $query = Customer::query();
+
+        if($this->request->country_id){
+            $query->where('country_id', $this->request->country_id);
         }
 
-        if($request->has('valid') == 1){
-            $customers = $customers->where('phone','REGEXP', '^[[:digit:]]{10}$');
+        if($this->request->valid == 1){
+            $query->whereRaw('LENGTH(phone) < 10');
         }
-        elseif($request->has('valid') == 2){
-            $customers = $customers->whereNot('phone','REGEXP', '^[[:digit:]]{10}$');
+        elseif($this->request->valid == 2){
+            $query->whereRaw('LENGTH(phone) >= 10');
         }
-        return $customers->paginate(15);
 
+        return $query->orderBy('id' , 'desc')->paginate(15);
     }
 
 }

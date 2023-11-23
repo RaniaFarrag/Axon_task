@@ -17,13 +17,14 @@ class CustomerController extends Controller
 
     }
 
+    /** List all phone numbers */
     public function listPhoneNumbers(Request $request)
     {
         $countries = Country::all();
         $customers = $this->customerService->filterCustomersPhoneNumbers($request);
 
         if($request->ajax()){
-            $data_json['viewBlade']= view('customers.table_partial', compact('customers'))->render();
+            $data_json['viewBlade']= view('customers.table_partial')->with(['customers' => $customers])->render();
             return response()->json($data_json);
         }
 

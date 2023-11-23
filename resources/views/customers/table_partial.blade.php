@@ -1,4 +1,4 @@
-<table id="numbers">
+<table>
     <tbody>
     <tr>
         <td>ID</td>
@@ -12,7 +12,7 @@
         <tr>
             <td>{{ $customer->id }}</td>
             <td>{{ $customer->country->country_name }}</td>
-            <td>{{ $customer->country->state == 1 ? 'Ok' : 'Nok' }}</td>
+            <td>{{ strlen((string)$customer->phone) < 10 ? 'Ok' : 'Nok' }}</td>
             <td>{{ $customer->country->country_code }}</td>
             <td>{{ $customer->phone }}</td>
         </tr>
@@ -20,4 +20,4 @@
     </tbody>
 </table>
 
-<div > {{ $customers->links() }}</div>
+<div> {{ $customers->links() }}</div>

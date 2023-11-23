@@ -51,55 +51,41 @@
            </div>
 
        </div>
-
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script>
-            $(document).ready(function () {
-                $('#country_id').on('change', function () {
-                    var country_id = this.value;
-
-                    $.ajax({
-                        url: "{{url('/list-phone')}}",
-                        type: "get",
-                        data: {
-                            country_id: country_id,
-                        },
-                        dataType: 'json',
-                        success: function (result) {
-                            $('.renderTable').html(JSON.parse(result).viewBlade);
-
-                        },
-                        error: function() {
-                            console.log( "Ajax Not Working" );
-                        }
-                    });
-                });
-
-
-                $('#valid').on('change', function () {
-                    var valid = this.value;
-
-                    $.ajax({
-                        url: "{{url('/list-phone')}}",
-                        type: "get",
-                        data: {
-                            valid: valid,
-                        },
-                        dataType: 'json',
-                        success: function (result) {
-                            $('.renderTable').html(JSON.parse(result).viewBlade);
-
-                        },
-                        error: function() {
-                            console.log( "Ajax Not Working" );
-                        }
-                    });
-                });
-            });
-        </script>
     </body>
 </html>
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    function filter(btn) {
+        $.ajax({
+            url: "{{url('/list-phone')}}",
+            type: "get",
+            "data": {
+                "page": btn.is("a") ? btn.attr('href').split('page=')[1] : "",
+                "country_id": $("#country_id").val(),
+                "valid": $("#valid").val(),
+            },
+            dataType: 'json',
+            success: function (result) {
+                $('.renderTable').html((result).viewBlade);
+
+            },
+            error: function() {
+                console.log( "Ajax Not Working" );
+            }
+        });
+    }
+</script>
+
+<script>
+    $('#country_id').on('change', function () {
+        filter($(this));
+    });
+
+    $('#valid').on('change', function () {
+        filter($(this));
+    });
+</script>
 

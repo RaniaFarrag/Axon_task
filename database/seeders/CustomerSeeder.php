@@ -41,6 +41,24 @@ class CustomerSeeder extends Seeder
             ['name'=>'shop23 sales', 'phone' => '9773199405', 'country_id' => 2],
             ['name'=>'Filimon Embaye', 'phone' => '914701723', 'country_id' => 2],
             ['name'=>'ABRAHAM NEGASH', 'phone' => '911203317', 'country_id' => 2],
+
+            ['name'=>'ZEKARIAS KEBEDE', 'phone' => '9119454961', 'country_id' => 2],
+            ['name'=>'EPHREM KINFE', 'phone' => '914148181', 'country_id' => 2],
+            ['name'=>'Karim Niki', 'phone' => '966002259', 'country_id' => 2],
+            ['name'=>'Frehiwot Teka', 'phone' => '988200000', 'country_id' => 2],
+            ['name'=>'Fanetahune Abaia', 'phone' => '924418461', 'country_id' => 2],
+            ['name'=>'Yonatan Tekelay', 'phone' => '911168450', 'country_id' => 2],
+
+            ['name'=>'EMILE CHRISTIAN KOUKOU DIKANDA HONORE', 'phone' => '697151594', 'country_id' => 1],
+            ['name'=>'MICHAEL MICHAEL', 'phone' => '677046616', 'country_id' => 1],
+            ['name'=>'ARREYMANYOR ROLAND TABOT', 'phone' => '6A0311634', 'country_id' => 1],
+            ['name'=>'LOUIS PARFAIT OMBES NTSO', 'phone' => '673122155', 'country_id' => 1],
+            ['name'=>'JOSEPH FELICIEN NOMO', 'phone' => '695539786', 'country_id' => 1],
+            ['name'=>'SUGAR STARRK BARRAGAN', 'phone' => '6622284920', 'country_id' => 1],
+            ['name'=>'WILLIAM KEMFANG', 'phone' => '677046616', 'country_id' => 1],
+            ['name'=>'THOMAS WILFRIED LOMO LOMO', 'phone' => '696443597', 'country_id' => 1],
+            ['name'=>'Dominique mekontchou', 'phone' => '691816558', 'country_id' => 1],
+            ['name'=>'Nelson Nelson', 'phone' => '699209115', 'country_id' => 1],
         ];
 
         Customer::query()->insert($customers);
